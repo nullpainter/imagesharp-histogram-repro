@@ -6,6 +6,7 @@ using Pastel;
 using SixLabors.ImageSharp;
 using SixLabors.ImageSharp.PixelFormats;
 using SixLabors.ImageSharp.Processing;
+using SixLabors.ImageSharp.Processing.Processors.Normalization;
 using Color = System.Drawing.Color;
 
 namespace HistogramRepro
@@ -22,7 +23,7 @@ namespace HistogramRepro
 
         private static async Task Main(string[] args)
         {
-            var saveOutput = args.Length > 0 && args[0] == "-c";
+            var saveOutput = args.Length > 0 && args[0] == "-s";
             if (saveOutput) Directory.CreateDirectory(OutputDirectory);
 
             // Apply histogram equalisation to image
